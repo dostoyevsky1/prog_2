@@ -16,9 +16,8 @@ print(raise_to_power(2,5))
 
 
 
-def sqrt(v):
+def sqrt(v, initial_guess = 1):
     
-    initial_guess = 1
     new_val = 0.5*(initial_guess + v / initial_guess)
     error = new_val - initial_guess
     while abs(error) > 0.005:
