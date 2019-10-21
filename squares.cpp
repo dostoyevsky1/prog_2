@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include "squares.h"
 
 int main()
