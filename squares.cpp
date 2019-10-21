@@ -63,17 +63,82 @@ double Sqrt(double v, int initial_guess = 1)
     
 }
 
+// More Data Function
+
+bool MoreData()
+{
+    char yes_no;
+
+    std::cout << "Would you like to process another pair of numbers?(y/n)" << std::endl;
+    std::cin >> yes_no;
+
+    while (true)
+    {
+        if(yes_no == "y")
+        {
+            return true;
+        } else if(yes_no == "n")
+        {
+            return false;
+        } else 
+        {
+            std::cout << "Would you like to process another pair of numbers?(y/n)" << std::endl;
+        }
+    }
+    
+
+
+}
+
+
+
+
+
+
 
 
 
 
 int main()
 {
-    
-    std::cout << Power(2,-5) << std::endl;
+    int x, y, lower, upper, endline_check;
 
-    std::cout << Sqrt(25) << std::endl;
-    
+    do
+    {
+        std::cout << "Enter a number: " << std::endl;
+        std::cin >> x;
+
+        std::cout << "Enter another number: " << std::endl;
+        std::cin >> y;
+
+        if(x < y)
+        {
+            lower = x;
+            upper = y;
+        } else
+        {
+            lower = y;
+            upper = x;
+        }
+
+        std::cout << "N" << "\t" << "N Squared" << "\t" << "Square Root (N)" << std:: endl;
+
+        endline_check = 0;
+        for(int i = lower; i <= upper; i++)
+        {   
+            if (endline_check == 3)
+            {
+                std::cout << std::endl;
+                endline_check = 0;
+            }
+            else
+            {
+                std::cout << i << "\t" < Power(i,2) << "\t" << Sqrt(i)
+                endline_check++;
+            }
+        }
+        
+    } while (MoreData() == true);
     
     
     
