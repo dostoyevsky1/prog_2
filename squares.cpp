@@ -74,34 +74,24 @@ bool MoreData()
 
     while (true)
     {
-        if(yes_no == "y")
+        if(yes_no == 'y')
         {
             return true;
-        } else if(yes_no == "n")
+        } else if(yes_no == 'n')
         {
             return false;
         } else 
         {
             std::cout << "Would you like to process another pair of numbers?(y/n)" << std::endl;
+            std::cin >> yes_no;
         }
     }
-    
-
-
 }
-
-
-
-
-
-
-
-
 
 
 int main()
 {
-    int x, y, lower, upper, endline_check;
+    int x, y, lower, upper;
 
     do
     {
@@ -121,27 +111,15 @@ int main()
             upper = x;
         }
 
-        std::cout << "N" << "\t" << "N Squared" << "\t" << "Square Root (N)" << std:: endl;
-
-        endline_check = 0;
+        std::cout << std::endl << "N" << "\t" << "N Squared" << "\t" << "Square Root (N)" << std:: endl;
+        
         for(int i = lower; i <= upper; i++)
-        {   
-            if (endline_check == 3)
-            {
-                std::cout << std::endl;
-                endline_check = 0;
-            }
-            else
-            {
-                std::cout << i << "\t" < Power(i,2) << "\t" << Sqrt(i)
-                endline_check++;
-            }
+        {  
+                std::cout.precision(3);
+                std::cout << i << "\t" << Power(i,2) << "\t\t" << Sqrt(i) << std::endl;
         }
         
     } while (MoreData() == true);
-    
-    
-    
+       
     return 0;
-
 }
